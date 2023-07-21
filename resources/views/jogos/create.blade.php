@@ -5,8 +5,9 @@
 @section('content')
 <h1>Cadastrar um novo jogo</h1>
 <hr>
-<form action="{{ route('jogos-store') }}" method="post">
+<form action="{{route('jogos-store')}}" method="post">
     @csrf
+    @method('POST')
     <div class="form-group my-2">
         <label for="nome">Nome do jogo:</label>
         <input class="form-control" type="text" name="nome" placeholder="Digite um nome">

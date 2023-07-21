@@ -3,9 +3,18 @@
 @section('title', 'Listagem')
 
 @section('content')
-<div class="header d-flex justify-content-between">
+<div class="header d-flex justify-content-between align-items-center">
     <h1>Jogos</h1>
-    <a href="{{route('jogos-create')}}" class="btn btn-primary">Novo Jogo</a>
+    <form action="{{route('jogos-search')}}" method="post" class="d-flex gap-2 h-25">
+        @csrf
+        <input type="text" name="text" class="form-control form-control-sm" placeholder="Procure por nome, categoria...">
+        <button type="submit" class="btn btn-info">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+        </button>
+    </form>
+    <a href="{{route('jogos-create')}}" class="btn btn-primary h-25">Novo Jogo</a>
 </div>
 
 
